@@ -20,21 +20,25 @@ class TreeListFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val recyclerView = inflater.inflate(R.layout.fragment_tree_list, container, false)
         // Inflate the layout for this fragment
         if (recyclerView !is RecyclerView) {
             throw RuntimeException("TreeListFragment view should be a recycler view")}
 
         val trees = listOf<Tree>()
-        val adapter = TreeRecyclerViewAdapter(trees)
-        recyclerView.layoutManager = LinearLayoutManager(context)
-        recyclerView.adapter = adapter
+        val adapter = TreeRecyclerViewAdapter(trees) {tree, isFavorite -> // connects to callback function of adapter
+            treeViewModel.setIsFavorite(tree, isFavorite)
+        }
+
 
         treeViewModel.latestTrees.observe(requireActivity()) { treeList ->
             adapter.trees = treeList
             adapter.notifyDataSetChanged()
         }
+
+        recyclerView.layoutManager = LinearLayoutManager(context)
+        recyclerView.adapter = adapter
 
         return recyclerView
     }

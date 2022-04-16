@@ -13,13 +13,18 @@ import java.util.*
 private const val TAG = "MAIN_ACTIVITY"
 
 class MainActivity : AppCompatActivity() {
+
+    val CURRENT_FRAGMENT_BUNDLE_KEY = "Holds current fragment key"
+    lateinit var currentFragmentTag: String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val database = Firebase.firestore
+        currentFragmentTag = savedInstanceState?.getString(CURRENT_FRAGMENT_BUNDLE_KEY) ?: "MAP"
+
         // Passes a fragment call to our function for display on create.
-        showFragment("MAP")
+        showFragment(currentFragmentTag)
         // Wires up our Nav Bar. it will be persistent through fragment views
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
 
@@ -46,7 +51,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun showFragment(fragmentCall: String) {
         // if we are not seeing the fragment with a given fragmentCall, display it.
+        currentFragmentTag = fragmentCall
 
+        // Checks the to make sure the call is not null and begins commits a fragment call
+        // based on the string passed by the menu item selected.
         if (supportFragmentManager.findFragmentByTag(fragmentCall) == null) {
             val transaction = supportFragmentManager.beginTransaction()
             when (fragmentCall) {
@@ -57,5 +65,12 @@ class MainActivity : AppCompatActivity() {
             }
             transaction.commit()
         }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        // Saves the current fragment string name in an outState bundle so when the
+        // activity is restored the current fragment is also restored.
+        super.onSaveInstanceState(outState)
+        outState.putString(CURRENT_FRAGMENT_BUNDLE_KEY, currentFragmentTag)
     }
 }

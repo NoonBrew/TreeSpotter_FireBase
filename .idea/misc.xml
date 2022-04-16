@@ -3,9 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Nate O/AndroidStudioProjects/TreeSpotter_FireBase/app/src/main/res/drawable/background.xml" value="0.143" />
         <entry key="..\:/Users/Nate O/AndroidStudioProjects/TreeSpotter_FireBase/app/src/main/res/layout/activity_main.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/Nate O/AndroidStudioProjects/TreeSpotter_FireBase/app/src/main/res/layout/fragment_tree_list.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/Nate O/AndroidStudioProjects/TreeSpotter_FireBase/app/src/main/res/layout/fragment_tree_list_item.xml" value="0.25" />
+        <entry key="..\:/Users/Nate O/AndroidStudioProjects/TreeSpotter_FireBase/app/src/main/res/layout/fragment_tree_map.xml" value="0.22" />
+        <entry key="..\:/Users/Nate O/AndroidStudioProjects/TreeSpotter_FireBase/app/src/main/res/layout/tree_name_dialog.xml" value="0.33" />
         <entry key="..\:/Users/Nate O/AndroidStudioProjects/TreeSpotter_FireBase/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.18802083333333333" />
       </map>
     </option>

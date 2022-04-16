@@ -2,6 +2,16 @@
     <string name="app_name">TreeSpotter_FireBase</string>
     <string name="map">Map</string>
     <string name="list">List</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_tree">Add tree</string>
+    <string name="give_permission">You\'ll need to grant permission to add tree locations.</string>
+    <string name="no_location">No location available</string>
+    <string name="grant_location_permission">Please grant location permission to add tree.</string>
+    <string name="added_tree">Added %1$s tree!</string>
+    <string name="confirm_delete_tree">Delete tree %1$s?</string>
+    <string name="delete">Delete?</string>
+    <string name="tree_delete">Delete tree %1$s.</string>
+    <string name="dialog_message">Tree Name</string>
+    <string name="dialog_tree_name_hint">Enter type of tree</string>
+    <string name="no_tree_name_warning">Tree was not added because no name was entered.</string>
+    <string name="no_tree_added">No tree added.</string>
 </resources>
